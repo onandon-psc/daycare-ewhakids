@@ -1,0 +1,8 @@
+125.133.115.17 - [23/Apr/2011:15:37:50 +0900] /include/board/board_common_proc.php: file1 = duddj.bmp: 허용되지 않은 확장자 파일 업로드
+ -&gt; [Method: FILE]
+ -&gt; [Policy: 파일정책]
+ -&gt; [Pattern: check filetype]
+125.133.115.17 - [23/Apr/2011:15:38:05 +0900] /include/board/board_common_proc.php: file1 = duddj.bmp: 허용되지 않은 확장자 파일 업로드
+ -&gt; [Method: FILE]
+ -&gt; [Policy: 파일정책]
+ -&gt; [Pattern: check filetype]

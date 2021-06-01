@@ -1,0 +1,4 @@
+211.46.125.253 - [20/May/2011:22:03:34 +0900] /include/board/board_common_proc.php: file1 = 핑크.bmp: 허용되지 않은 확장자 파일 업로드
+ -&gt; [Method: FILE]
+ -&gt; [Policy: 파일정책]
+ -&gt; [Pattern: check filetype]

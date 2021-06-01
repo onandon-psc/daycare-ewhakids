@@ -1,0 +1,96 @@
+<?
+	include "../../include/board/030301_val.php";
+
+	$query	= "SELECT * FROM ona_030401 WHERE mbId='".$_SESSION[member_id]."' && wdate='".date('Y-m-d')."'";
+	$result	= mysql_query($query);
+	$row		= mysql_fetch_array($result);
+?>
+
+<script language="javascript">
+<!--
+	function del(){
+		if(confirm('정말 취소하겠습니까?')){
+			document.actFrm.submit();
+		}
+	}
+//-->
+</script>
+
+<form name="actFrm" method="post" action="/html/sub03/030401_proc.php" onSubmit="return input_check(this);" target="iframe">
+	<input type="hidden" name="send" value="delete">
+	<input type="hidden" name="idx" value="<?=$row[idx]?>">
+</form>
+
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>						
+			<!--page&button(s)-->
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td><img src="../../images/sub03/img_06.gif"></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="tit_lv1"><img src="../../images/sub03/text_02.gif"></td>
+				</tr>
+				<tr>
+					<td>
+						<!---글보기--->
+						<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+							<tr>
+								<td>
+									<!---내용보기--->
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td height="2" colspan="2" class="bline1"></td>
+										</tr>
+										<tr>
+											<td align="center" class="btitle1">자녀명</td>
+											<td class="bcontent1"><?=$row[childName]?></td>
+										</tr>
+										<tr>
+											<td height="1" colspan="2" class="bline4"></td>
+										</tr>
+										<tr>
+											<td width="131" align="center" class="btitle1">학급명</td>
+											<td width="524" class="bcontent1"><?=$arrClass[$row[childClass]]?><?=$row[childClass2]?", ".$arrClass[$row[childClass2]]:""?></td>
+										</tr>
+										<tr>
+											<td height="1" colspan="2" class="bline4"></td>
+										</tr>
+										<tr>
+											<td width="131" align="center" class="btitle1">귀가 예정 시간 </td>
+											<td class="bcontent1"><?=$row[childTime]?></td>
+										</tr>
+										<tr>
+											<td height="1" colspan="2" class="bline4"></td>
+										</tr>
+										<tr>
+											<td width="131" align="center" class="btitle1">전달사항</td>
+											<td valign="top" class="bcontent1"><?=nl2br($row[childMemo])?></td>
+										</tr>
+										<tr>
+											<td height="1" colspan="2" class="bline4"></td>
+										</tr>
+									</table>
+									<!---내용보기(e)--->
+									<!--button-->
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td align="right"  style="padding:15 0 0 0;"> <a href="/html/sub/index.php?pno=030401&mode=modify"><img src="../../images/btn/btn_edit.gif" alt="수정" width="38" height="19" border="0" /></a> <img src="../../images/btn/btn_delete.gif" alt="삭제" onclick="del()" style="cursor:pointer"></td>
+										</tr>
+									</table>
+									<!--button(e)-->
+								</td>
+							</tr>
+						</table>
+						<!---글보기(e)--->
+					</td>
+				</tr>
+			</table>
+			<!--page&button(e)-->
+		</td>
+	</tr>
+</table>

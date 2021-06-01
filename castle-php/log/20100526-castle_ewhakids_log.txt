@@ -1,0 +1,8 @@
+59.6.150.172 - [26/May/2010:02:04:58 +0900] /include/board/board_common_proc.php: file1 = 바다반 20 명 증명사진 - 홈페이지 등록.bmp: 허용되지 않은 확장자 파일 업로드
+ -&gt; [Method: FILE]
+ -&gt; [Policy: 파일정책]
+ -&gt; [Pattern: check filetype]
+59.6.150.172 - [26/May/2010:02:06:24 +0900] /include/board/board_common_proc.php: file1 = 바다반 20 명 증명사진 - 홈페이지 등록.bmp: 허용되지 않은 확장자 파일 업로드
+ -&gt; [Method: FILE]
+ -&gt; [Policy: 파일정책]
+ -&gt; [Pattern: check filetype]

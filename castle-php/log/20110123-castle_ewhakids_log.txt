@@ -1,0 +1,12 @@
+220.85.38.57 - [23/Jan/2011:10:23:31 +0900] /include/board/board_common_proc.php: board_content = &lt;P style=\"MARGIN: 0px\"&gt;¹èº¯ÈÆ·Ã°ú °ü·ÃµÈ È°µ¿À» ÁøÇàÇÏ¸é¼­ ¿µ¾: SQL_Injection ê³µê²© íŒ¨í„´ íƒì§€
+ -&gt; [Method: POST]
+ -&gt; [Policy: ê¸°ë³¸ì •ì±…]
+ -&gt; [Pattern: or+[[:space:]]+[a-zA-Z]+[[:space:]]*['\"]?[[:space:]]*=[[:space:]]*\(?['\"]?[[:space:]]*[a-zA-Z]+]
+220.85.38.57 - [23/Jan/2011:10:25:36 +0900] /include/board/board_common_proc.php: board_content = &lt;P style=\"MARGIN: 0px\"&gt;¹èº¯ÈÆ·Ã°ú °ü·ÃµÈ È°µ¿À» ´Ù¾çÇÏ°Ô ÁøÇàÇ: SQL_Injection ê³µê²© íŒ¨í„´ íƒì§€
+ -&gt; [Method: POST]
+ -&gt; [Policy: ê¸°ë³¸ì •ì±…]
+ -&gt; [Pattern: or+[[:space:]]+[a-zA-Z]+[[:space:]]*['\"]?[[:space:]]*=[[:space:]]*\(?['\"]?[[:space:]]*[a-zA-Z]+]
+220.85.38.57 - [23/Jan/2011:12:16:15 +0900] /include/board/board_common_proc.php: board_content = &lt;P style=\"MARGIN: 0px\"&gt;¹èº¯ÈÆ·Ã°ú °ü·ÃµÈ È°µ¿À» ´Ù¾çÇÏ°Ô ÁøÇàÇ: SQL_Injection ê³µê²© íŒ¨í„´ íƒì§€
+ -&gt; [Method: POST]
+ -&gt; [Policy: ê¸°ë³¸ì •ì±…]
+ -&gt; [Pattern: or+[[:space:]]+[a-zA-Z]+[[:space:]]*['\"]?[[:space:]]*=[[:space:]]*\(?['\"]?[[:space:]]*[a-zA-Z]+]

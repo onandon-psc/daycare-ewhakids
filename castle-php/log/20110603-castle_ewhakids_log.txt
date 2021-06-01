@@ -1,0 +1,12 @@
+211.46.125.253 - [03/Jun/2011:18:20:20 +0900] /include/board/board_common_proc.php: file1 = noname01.bmp: 허용되지 않은 확장자 파일 업로드
+ -&gt; [Method: FILE]
+ -&gt; [Policy: 파일정책]
+ -&gt; [Pattern: check filetype]
+211.46.125.253 - [03/Jun/2011:18:20:51 +0900] /include/board/board_common_proc.php: file1 = noname01.bmp: 허용되지 않은 확장자 파일 업로드
+ -&gt; [Method: FILE]
+ -&gt; [Policy: 파일정책]
+ -&gt; [Pattern: check filetype]
+211.46.125.253 - [03/Jun/2011:22:21:48 +0900] /include/board/board_common_proc.php: file1 = 10.bmp: 허용되지 않은 확장자 파일 업로드
+ -&gt; [Method: FILE]
+ -&gt; [Policy: 파일정책]
+ -&gt; [Pattern: check filetype]

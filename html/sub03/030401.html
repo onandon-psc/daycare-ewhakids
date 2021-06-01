@@ -1,0 +1,179 @@
+<? 
+	include "../../include/board/030301_val.php"; 
+
+	$query	= "SELECT * FROM ona_030401 WHERE mbId='".$_SESSION[member_id]."' && wdate='".date('Y-m-d')."'";
+	$result	= mysql_query($query);
+	$row		= mysql_fetch_array($result);
+
+	$expTime = explode(":",$row[childTime]);
+
+	if($row[idx] && $mode!="modify"){
+		echo "<script>
+					 location.href('/html/sub/index.php?pno=030402');
+				  </script>";
+	}
+?>
+<script language="javascript">
+<!--
+	function chgTxt(v){
+		if(v.length < 2) v = "0"+v;
+		return v;
+	}
+
+	function input_check(f){
+
+		if(!f.mbId.value){
+			alert('회원만 신청할 수 있습니다.');
+			location.href('/html/sub/index.php?pno=070101');
+			return false;
+		}
+
+		if(<?=date("Hi")?> < "700" || "1800" < <?=date("Hi")?>){
+			alert('야간보육 신청시간은 07:00 ~ 18:00 입니다.');
+			return false; 
+		}
+
+		if(!f.childName.value){
+			alert('자녀명을 입력하십시오!');
+			f.childName.focus();
+			return false;
+		}
+		if(!f.childClass.value){
+			alert('학급명을 선택하십시오!');
+			f.childClass.focus();
+			return false;
+		}
+		if(!f.childTime1.value){
+			alert('귀가 예정 시간을 입력하십시오!');
+			f.childTime1.focus();
+			return false;
+		}
+		if(!f.childTime2.value){
+			alert('귀가 예정 시간을 입력하십시오!');
+			f.childTime2.focus();
+			return false;
+		}
+		
+		var time = chgTxt(f.childTime1.value)+chgTxt(f.childTime2.value);
+		time = Number(time);
+
+		
+
+		if("2200" < time){
+			alert('귀가 예정 시간은 22:00 입니다.');
+			return false; 
+		}
+	
+		f.childTime1.value = chgTxt(f.childTime1.value);
+		f.childTime2.value = chgTxt(f.childTime2.value);
+		return;
+	}
+//-->
+</script>
+
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>						
+			<!--page&button(s)-->
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td><img src="../../images/sub03/img_06.gif"></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="tit_lv1"><img src="../../images/sub03/text_01.gif"></td>
+				</tr>
+				<tr>
+					<td>
+						<!---글쓰기--->
+						<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+							<tr>
+								<td>
+									<!---내용쓰기--->
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<form method="post" action="/html/sub03/030401_proc.php" onSubmit="return input_check(this);" target="iframe">
+										<input type="hidden" name="send" value="<?=$mode=='modify'?'modify':'write'?>">
+										<input type="hidden" name="mbId" value="<?=$_SESSION[member_id]?>">
+										<tr>
+											<td height="2" colspan="2" class="bline1"></td>
+										</tr>
+										<tr>
+											<td align="center" class="btitle1">자녀명</td>
+											<td class="bcontent1">
+												<input name="childName" type="text" class="input" id="textfield22" value="<?=$row[childName]?>" style="width:150px;ime-mode:active" />
+											</td>
+										</tr>
+										<tr>
+											<td height="1" colspan="2" class="bline4"></td>
+										</tr>
+										<tr>
+											<td width="131" align="center" class="btitle1">학급명</td>
+											<td width="524" class="bcontent1">
+												<select name="childClass">
+													<? 
+														foreach($arrClass As $k => $val){ 
+															if($val=="전체") $val = "--- 반선택 ---";
+													?>
+													<option value="<?=$k?>" <?if( $k == $row[childClass]) echo "selected"?>><?=$val?></option>
+													<?
+														 }
+													?>
+												</select>
+												<select name="childClass2">
+													<? 
+														foreach($arrClass As $k => $val){ 
+															if($val=="전체") $val = "--- 반선택 ---";
+													?>
+													<option value="<?=$k?>" <?if( $k == $row[childClass2]) echo "selected"?>><?=$val?></option>
+													<?
+														 }
+													?>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td height="1" colspan="2" class="bline4"></td>
+										</tr>
+										<tr>
+											<td width="131" align="center" class="btitle1">귀가 예정 시간 </td>
+											<td class="bcontent1">
+												<input name="childTime1" type="text" class="input" id="textfield23" value="<?=$expTime[0]?>" style="width:40px" maxlength="2" onKeyUp="if(this.value.match(/[^0-9]/)) { alert('숫자만 넣어주세요'); this.value = ''; this.focus(); return false; };lengthCheck( this );"/>
+												시
+												<input name="childTime2" type="text" class="input" id="textfield232" value="<?=$expTime[1]?>" style="width:40px"  maxlength="2" onKeyUp="if(this.value.match(/[^0-9]/)) { alert('숫자만 넣어주세요'); this.value = ''; this.focus(); return false; };lengthCheck( this );"/>
+												분</td>
+										</tr>
+										<tr>
+											<td height="1" colspan="2" class="bline4"></td>
+										</tr>
+										<tr>
+											<td width="131" align="center" class="btitle1">전달사항</td>
+											<td valign="top" class="bcontent1">
+												<textarea name="childMemo" wrap="hard" style="width:510px;height:70px;"><?=$row[childMemo]?></textarea>
+											</td>
+										</tr>
+										<tr>
+											<td height="1" colspan="2" class="bline4"></td>
+										</tr>
+									</table>
+									<!---내용쓰기(e)--->
+									<!--button-->
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td align="right"  style="padding:15 0 0 0;"><input type="image" src="../../images/btn/btn_confirm.gif" alt="확인" border="0" style="cursor:pointer" /> <img src="../../images/btn/btn_cancel.gif" alt="취소" border="0" onClick="history.back();" style="cursor:pointer"/></td>
+										</tr>
+									</form>
+									</table>
+									<!--button(e)-->
+								</td>
+							</tr>
+						</table>
+						<!---글쓰기(e)--->
+					</td>
+				</tr>
+			</table>
+			<!--page&button(e)-->
+		</td>
+	</tr>
+</table>

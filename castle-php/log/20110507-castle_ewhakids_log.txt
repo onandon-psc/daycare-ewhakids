@@ -1,0 +1,12 @@
+118.44.218.127 - [07/May/2011:19:52:02 +0900] /include/board/board_common_proc.php: board_content = &lt;IMG class=handCursor style=\"MARGIN: 5px; WIDTH: 19px; HEIGHT: : SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: or+[[:space:]]+[a-zA-Z]+[[:space:]]*['\"]?[[:space:]]*=[[:space:]]*\(?['\"]?[[:space:]]*[a-zA-Z]+]
+118.44.218.127 - [07/May/2011:19:52:49 +0900] /include/board/board_common_proc.php: board_content = &lt;IMG class=handCursor style=\"MARGIN: 5px; WIDTH: 19px; HEIGHT: : SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: or+[[:space:]]+[a-zA-Z]+[[:space:]]*['\"]?[[:space:]]*=[[:space:]]*\(?['\"]?[[:space:]]*[a-zA-Z]+]
+118.44.218.127 - [07/May/2011:19:54:57 +0900] /include/board/board_common_proc.php: board_content = &lt;IMG class=handCursor style=\"MARGIN: 5px; WIDTH: 19px; HEIGHT: : SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: or+[[:space:]]+[a-zA-Z]+[[:space:]]*['\"]?[[:space:]]*=[[:space:]]*\(?['\"]?[[:space:]]*[a-zA-Z]+]

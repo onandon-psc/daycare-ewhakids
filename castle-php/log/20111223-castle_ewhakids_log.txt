@@ -1,0 +1,4 @@
+211.234.223.2 - [23/Dec/2011:13:35:21 +0900] /include/board/board_common_proc.php: file1 = 성탄축하공연.png: 허용되지 않은 확장자 파일 업로드
+ -&gt; [Method: FILE]
+ -&gt; [Policy: 파일정책]
+ -&gt; [Pattern: check filetype]

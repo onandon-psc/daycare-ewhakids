@@ -1,0 +1,8 @@
+211.46.125.253 - [17/May/2010:16:27:44 +0900] /include/board/board_common_proc.php: board_content = &lt;P style=\"MARGIN: 0px\"&gt;- ¿À·§¸¸¿¡ Àº·üÀÌ°¡ µî¿øÇß¾î¿ä.^^* Â¦Â¦: SQL_Injection ê³µê²© íŒ¨í„´ íƒì§€
+ -&gt; [Method: POST]
+ -&gt; [Policy: ê¸°ë³¸ì •ì±…]
+ -&gt; [Pattern: or+[[:space:]]+[a-zA-Z]+[[:space:]]*['\"]?[[:space:]]*=[[:space:]]*\(?['\"]?[[:space:]]*[a-zA-Z]+]
+211.46.125.253 - [17/May/2010:16:32:05 +0900] /include/board/board_common_proc.php: board_content = &lt;P style=\"MARGIN: 0px\"&gt;- Àº·üÀÌ°¡ ¿À·§¸¸¿¡ µî¿øÇß¾î¿ä. Â¦Â¦Â¦&lt;: SQL_Injection ê³µê²© íŒ¨í„´ íƒì§€
+ -&gt; [Method: POST]
+ -&gt; [Policy: ê¸°ë³¸ì •ì±…]
+ -&gt; [Pattern: or+[[:space:]]+[a-zA-Z]+[[:space:]]*['\"]?[[:space:]]*=[[:space:]]*\(?['\"]?[[:space:]]*[a-zA-Z]+]

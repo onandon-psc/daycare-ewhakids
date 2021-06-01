@@ -1,0 +1,287 @@
+<link href="include/css/style.css" rel="stylesheet" type="text/css">
+<!--- include Top(S) --->
+<? include "include/html/top.html"; ?>
+<table width="980" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<script language="javascript">flash('980','392',"../../flash/visual_main.swf")</script>
+		</td>
+	</tr>
+</table>
+<!--- include Top(E) --->
+<!--- Content(S) --->
+<table width="980" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="19">&nbsp;</td>
+		<td width="862" valign="top">
+			<table width="862" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="207" valign="top">
+						<table width="207" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
+									<table width="207" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td><a href="#"><img src="images/main/img_01.gif" alt="입소신청" border="0" /></a></td>
+										</tr>
+										<tr>
+											<td height="109" valign="top" background="images/main/img_bg.gif"style="padding:75px 0px 0px 108px"><a href="#"><img src="images/main/link_01.gif" alt="입소신청서 작성" border="0" /></a></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="12"></td>
+							</tr>
+							<tr>
+								<td>
+									<!---달력 전체--->
+									<table width="207" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td height="47" valign="top" background="images/main/bg_01.gif" style="padding:22px 0px 0px 102px"><a href="#"></a>
+												<!--월선택--->
+												<table width="95" border="0" cellspacing="0" cellpadding="0">
+													<tr>
+														<td width="11"><a href="#"><img src="images/main/btn_pr.gif" alt="이전달" border="0" /></a></td>
+														<td width="37" align="center" class="font_orenge1">2010</td>
+														<td width="35"><img src="images/main/m_09.gif" width="29" height="22" /></td>
+														<td width="12"><a href="#"><img src="images/main/btn_ne.gif" alt="다음달" border="0" /></a></td>
+													</tr>
+												</table>
+												<!--월선택(e)--->
+											</td>
+										</tr>
+										<tr>
+											<td background="images/main/img_bg5.gif">
+												<table width="189" border="0" align="center" cellpadding="0" cellspacing="0">
+													<tr>
+														<td height="22"><img src="images/main/img_05.gif" /></td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td height="89" valign="top" background="images/main/bg_02.gif" style="padding:1px 0px 0px 0px">
+												<!---일자--->
+												<table width="182" border="0" align="center" cellpadding="0" cellspacing="0">
+													<tr>
+														<td width="26" height="12" align="center"></td>
+														<td width="26" height="12" align="center"><img src="images/main/g_01.gif" /></td>
+														<td width="26" height="12" align="center"><img src="images/main/g_02.gif" width="12" height="8" /></td>
+														<td width="26" height="12" align="center"><img src="images/main/g_03.gif" width="12" height="8" /></td>
+														<td width="26" height="12" align="center"><img src="images/main/g_04.gif" width="13" height="8" /></td>
+														<td width="26" height="12" align="center"><img src="images/main/g_05.gif" /></td>
+														<td width="26" height="12" align="center"><img src="images/main/b_06.gif" width="12" height="8" /></td>
+													</tr>
+													<tr>
+														<td width="26" height="12" align="center"><img src="images/main/o_07.gif" /></td>
+														<td width="26" height="12" align="center"><img src="images/main/g_08.gif" /></td>
+														<td width="26" height="12" align="center"><img src="images/main/g_09.gif" /></td>
+														<td width="26" height="12" align="center"><a href="#"><img src="images/main/r_09.gif" border="0" /></a></td>
+														<td width="26" height="12" align="center"><img src="images/main/g_10.gif" /></td>
+														<td width="26" height="12" align="center"><img src="images/main/g_11.gif" /></td>
+														<td width="26" height="12" align="center"><img src="images/main/b_12.gif" /></td>
+													</tr>
+													<tr>
+														<td height="12" align="center"><img src="images/main/o_13.gif" /></td>
+														<td height="12" align="center"><img src="images/main/g_14.gif" /></td>
+														<td height="12" align="center"><img src="images/main/g_15.gif" /></td>
+														<td height="12" align="center"><img src="images/main/g_26.gif" /></td>
+														<td height="12" align="center"><a href="#"><img src="images/main/r_17.gif" border="0" /></a></td>
+														<td height="12" align="center"><a href="#"><img src="images/main/r_18.gif" border="0" /></a></td>
+														<td height="12" align="center"><img src="images/main/b_19.gif" /></td>
+													</tr>
+													<tr>
+														<td height="12" align="center"><img src="images/main/o_20.gif" /></td>
+														<td height="12" align="center"><a href="#"><img src="images/main/r_21.gif" border="0" /></a></td>
+														<td height="12" align="center"><a href="#"><img src="images/main/r_22.gif" border="0" /></a></td>
+														<td height="12" align="center"><a href="#"><img src="images/main/r_23.gif" border="0" /></a></td>
+														<td height="12" align="center"><img src="images/main/g_24.gif" /></td>
+														<td height="12" align="center"><img src="images/main/g_25.gif" /></td>
+														<td height="12" align="center"><img src="images/main/b_26.gif" /></td>
+													</tr>
+													<tr>
+														<td height="12" align="center"><img src="images/main/o_27.gif" /></td>
+														<td height="12" align="center"><img src="images/main/g_28.gif" /></td>
+														<td height="12" align="center"><img src="images/main/g_29.gif" /></td>
+														<td height="12" align="center"><img src="images/main/g_30.gif" /></td>
+														<td height="12" align="center"><img src="images/main/g_31.gif" /></td>
+														<td height="12" align="center">&nbsp;</td>
+														<td height="12" align="center">&nbsp;</td>
+													</tr>
+												</table>
+												<!---일자(e)--->
+											</td>
+										</tr>
+									</table>
+									<!---달력 전체(e)--->
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td width="12" valign="top">&nbsp;</td>
+					<td width="643" valign="top">
+						<table width="643" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="424" height="156" valign="top" background="images/main/img_bg1.gif">
+									<!---공지사항--->
+									<table width="424" height="140" border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td height="33" style="padding:24px 0px 0px 364px"><img src="images/main/more.gif" /></td>
+										</tr>
+										<tr>
+											<td style="padding:8px 33px 0px 36px">
+												<!---공지사항 리스트--->
+												<table width="100%" border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td width="10"><img src="images/main/dot_01.gif" /></td>
+														<td width="298" class="text_gray"><a href="#">어쩌구 저쩌거 어쩌구 저쩌구 2월말
+																ㅓ신규오픈 <img src="images/common/icon_new.gif" align="absmiddle" style="margin-bootm:2px;" /></a></td>
+														<td width="50" class="text_gray">10.01.20</td>
+													</tr>
+													<tr>
+														<td><img src="images/main/dot_01.gif" /></td>
+														<td class="text_gray"><a href="#">어쩌구 저쩌거 어쩌구 저쩌구 2월말 ㅓ신규오픈 <img src="images/common/icon_new.gif" align="absmiddle" style="margin-bootm:2px;" /></a></td>
+														<td class="text_gray">10.01.20</td>
+													</tr>
+													<tr>
+														<td><img src="images/main/dot_01.gif" /></td>
+														<td class="text_gray"><a href="#">어쩌구 저쩌거 어쩌구 저쩌구 2월말 ㅓ신규오픈 <img src="images/common/icon_new.gif" align="absmiddle" style="margin-bootm:2px;" /></a></td>
+														<td class="text_gray">10.01.20</td>
+													</tr>
+													<tr>
+														<td><img src="images/main/dot_01.gif" /></td>
+														<td class="text_gray"><a href="#">어쩌구 저쩌거 어쩌구 저쩌구 2월말 ㅓ신규오픈 <img src="images/common/icon_new.gif" align="absmiddle" style="margin-bootm:2px;" /></a></td>
+														<td class="text_gray">10.01.20</td>
+													</tr>
+													<tr>
+														<td><img src="images/main/dot_01.gif" /></td>
+														<td class="text_gray"><a href="#">어쩌구 저쩌거 어쩌구 저쩌구 2월말 ㅓ신규오픈 <img src="images/common/icon_new.gif" align="absmiddle" style="margin-bootm:2px;" /></a></td>
+														<td class="text_gray">10.01.20</td>
+													</tr>
+												</table>
+												<!---공지사항 리스트(e)--->
+											</td>
+										</tr>
+									</table>
+									<!---공지사항(e)--->
+								</td>
+								<td width="12" valign="top"><img src="images/main/img_02.gif" /></td>
+								<td width="207" valign="top" background="images/main/img_bg3.gif">
+									<table width="207" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<!---유아마당 반선택--->
+											<td height="95" valign="top" style="padding:59px 0px 0px 57px">
+												<select name="select3" id="select3" style="width:95px;">
+													<option>++ 반선택 ++</option>
+													<option>해반 </option>
+													<option>달반 </option>
+													<option>별반 </option>
+													<option>산반</option>
+													<option>들반 </option>
+													<option>강반 </option>
+													<option>꽃반 </option>
+													<option>나무반 </option>
+													<option>샘물반 </option>
+													<option>호수반 </option>
+													<option>바다반 </option>
+													<option>하늘반 </option>
+												</select>
+												<a href="#"><img src="images/main/btn_01.gif" alt="확인" border="0" align="absmiddle"></a> </td>
+											<!---유아마당 반선택(e)--->
+										</tr>
+										<tr>
+											<td height="61" valign="top" style="padding:0px 17px 0px 17px"><a href="#"><img src="images/main/link_03.gif" alt="자세히보기" border="0" /></a></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="12" colspan="3"></td>
+							</tr>
+						</table>
+						<table width="643" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="424" valign="top">
+									<!---오늘의 식단--->
+									<table width="424" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td height="33" align="right" valign="top" background="images/main/img_bg2.gif" style="padding:17px 29px 0px 0px"><a href="#"><img src="images/main/more.gif" alt="자세히보기" border="0" /></a></td>
+										</tr>
+										<tr>
+											<td>
+												<!---식단 리스트--->
+												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+													<tr>
+														<td height="1" colspan="4" align="center" class="main_line"></td>
+													</tr>
+													<tr>
+														<td width="90" align="center" class="cell_01">오전간식</td>
+														<td width="134" class="cell_03">깐녹두죽</td>
+														<td width="63" align="center" class="cell_02">이유식</td>
+														<td width="137" class="cell_03">깐녹두죽</td>
+													</tr>
+													<tr>
+														<td height="1" colspan="4" align="center" class="main_line"></td>
+													</tr>
+													<tr>
+														<td align="center" class="cell_01">점심</td>
+														<td colspan="3" class="cell_03">발아현미밥/애호박감자된장국/돈육김치볶음/참나물 애호박감자된장국/돈육김치볶음/참나</td>
+													</tr>
+													<tr>
+														<td height="1" colspan="4" align="center" class="main_line"></td>
+													</tr>
+													<tr>
+														<td align="center" class="cell_01">오후간식</td>
+														<td colspan="3" class="cell_03">발아현미밥/애호박감자된장국/돈육김치볶음/참나물 </td>
+													</tr>
+													<tr>
+														<td height="1" colspan="4" align="center" class="main_line"></td>
+													</tr>
+													<tr>
+														<td align="center" class="cell_01">저녁</td>
+														<td colspan="3" class="cell_03">발아현미밥/애호박감자된장국/돈육김치볶음/참나물 </td>
+													</tr>
+													<tr>
+														<td height="1" colspan="4" align="center" class="main_line"></td>
+													</tr>
+												</table>
+												<!---식단 리스트(e)--->
+											</td>
+										</tr>
+									</table>
+									<!---오늘의 식단(e)--->
+								</td>
+								<td width="12">&nbsp;</td>
+								<td width="207" valign="top">
+									<table width="207" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<!---위탁운영기관--->
+											<td height="79" valign="top" background="images/main/img_bg4.gif" style="padding:43px 0px 0px 21px">
+												<select name="select" id="select" style="width:129px;">
+													<option>++ 선택 ++</option>
+													<option>이화 어린이 연구원 </option>
+													<option>이화여대 부속 유치원 </option>
+													<option>마포보육정보센터 </option>
+												</select>
+												<a href="#"><img src="images/main/btn_01.gif" alt="확인" border="0" align="absmiddle" /></a></td>
+										</tr>
+										<!---위탁운영기관(e)--->
+										<tr>
+											<td><img src="images/main/img_03.gif" /></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td width="99">&nbsp;</td>
+	</tr>
+</table>
+<!--- Content(E) --->
+<!--- Footer(S) --->
+<? include "include/html/footer.html"; ?>
+<!--- Footer(E) --->

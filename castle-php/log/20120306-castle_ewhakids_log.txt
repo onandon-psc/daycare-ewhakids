@@ -1,0 +1,8 @@
+112.218.172.42 - [06/Mar/2012:13:59:48 +0900] /onMaster/insteadofmysqlconsole.php: finalsql = select * from ona_application where childName = \'�赿��\': SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: select[[:space:]]+.*[[:space:]]+from]
+112.218.172.42 - [06/Mar/2012:14:00:23 +0900] /onMaster/insteadofmysqlconsole.php: sql = select * from ona_application where childName = \'�赿��\'\r\nse: SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: select[[:space:]]+.*[[:space:]]+from]

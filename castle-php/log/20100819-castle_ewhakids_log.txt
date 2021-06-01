@@ -1,0 +1,4 @@
+112.218.172.42 - [19/Aug/2010:09:55:13 +0900] /onMaster/insteadofmysqlconsole.php: finalsql = select userid,passwd from ona_member: SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: select[[:space:]]+.*[[:space:]]+from]

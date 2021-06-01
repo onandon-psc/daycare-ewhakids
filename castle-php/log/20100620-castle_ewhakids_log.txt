@@ -1,0 +1,4 @@
+220.85.38.57 - [20/Jun/2010:23:32:17 +0900] /include/board/board_common_proc.php: board_content = &lt;P style=\"MARGIN: 0px\"&gt;µé¹İ ¾ÆÀÌµé°ú ÀÏÁÖÀÏµ¿¾È &lt;/P&gt;\r\n&lt;P sty: SQL_Injection ê³µê²© íŒ¨í„´ íƒì§€
+ -&gt; [Method: POST]
+ -&gt; [Policy: ê¸°ë³¸ì •ì±…]
+ -&gt; [Pattern: or+[[:space:]]+[a-zA-Z]+[[:space:]]*['\"]?[[:space:]]*=[[:space:]]*\(?['\"]?[[:space:]]*[a-zA-Z]+]

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>[POP_TITLE]</title>
+<meta http-equiv='Content-Type' content='text/html; charset=euc-kr'>
+<link rel="stylesheet" href="/include/css/style.css" type="text/css">
+<script language='javascript' src='/include/js/popup_open.js'></script>
+<script language='javascript' src='/include/js/popup.js'></script>
+<style> 
+BODY 
+{
+scrollbar-face-color: #ffffff; scrollbar-shadow-color: #ffffff; 
+scrollbar-highlight-color: #333333; scrollbar-3dlight-color: #ffffff; 
+scrollbar-darkshadow-color: #000000; scrollbar-track-color: #ffffff; 
+scrollbar-arrow-color: #cccccc
+}
+.chkclose {color:gray;font-size:12px;font-family:굴림}
+</style> 
+<script language='javascript'>
+
+[MAP_FUNCTION]
+
+</script>
+</head>
+<body bgcolor='#FFFFFF' text='#000000' leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>
+<table width='100%' border='0' cellspacing='0' cellpadding='0' align='center'>
+<tr>
+	<td>
+	<img src="[POP_IMAGE]" align="absmiddle" onError="this.style.display='none'" border=0 usemap='#mapgo' [EXT]>[POP_HTML]
+	</td>
+</tr>
+<tr>
+	<td align='right' style='padidng:0 10 0 0' valign='middle' class="chkclose">&nbsp;
+	<input type='checkbox' name='chkwin' onClick="[POP_CLOSE_KIND]('[POP_COOKNM]','clspop',[POP_COOKDAY],'wnd_[POP_IDX]');"> [POP_COOKDAY]일동안 보이지 않음 &nbsp;&nbsp;&nbsp;[POP_CLOSE]
+	</td>
+</tr>
+</table>
+
+<map name="mapgo">
+[MAP_POS]
+</map>
+
+</body>
+</html>

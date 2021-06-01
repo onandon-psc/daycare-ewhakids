@@ -1,0 +1,4 @@
+112.218.172.42 - [01/Feb/2012:13:54:15 +0900] /onMaster/insteadofmysqlconsole.php: finalsql = select * from error_query\r\n: SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: select[[:space:]]+.*[[:space:]]+from]

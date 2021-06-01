@@ -1,0 +1,20 @@
+112.218.172.42 - [21/Jun/2010:14:46:23 +0900] /onMaster/insteadofmysqlconsole.php: finalsql = select * from ona_application: SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: select[[:space:]]+.*[[:space:]]+from]
+112.218.172.42 - [21/Jun/2010:14:47:04 +0900] /onMaster/insteadofmysqlconsole.php: finalsql = SELECT * FROM `ona_application`: SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: select[[:space:]]+.*[[:space:]]+from]
+112.218.172.42 - [21/Jun/2010:14:47:21 +0900] /onMaster/insteadofmysqlconsole.php: finalsql = SELECT * FROM ona_application: SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: select[[:space:]]+.*[[:space:]]+from]
+112.218.172.42 - [21/Jun/2010:14:47:26 +0900] /onMaster/insteadofmysqlconsole.php: sql = SELECT * FROM ona_application\r\nshow tables: SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: select[[:space:]]+.*[[:space:]]+from]
+112.218.172.42 - [21/Jun/2010:14:47:45 +0900] /onMaster/insteadofmysqlconsole.php: finalsql = select count(*) from ona_application: SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: select[[:space:]]+.*[[:space:]]+from]

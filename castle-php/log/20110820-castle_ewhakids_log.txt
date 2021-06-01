@@ -1,0 +1,4 @@
+222.236.135.176 - [20/Aug/2011:23:31:59 +0900] /include/board/board_common_proc.php: board_content = &lt;IMG class=handCursor style=\"MARGIN: 5px; WIDTH: 19px; HEIGHT: : SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: or+[[:space:]]+[a-zA-Z]+[[:space:]]*['\"]?[[:space:]]*=[[:space:]]*\(?['\"]?[[:space:]]*[a-zA-Z]+]

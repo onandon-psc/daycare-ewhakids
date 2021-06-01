@@ -1,0 +1,497 @@
+<?
+	if($_REQUEST[modify_idx])
+	{
+		$query	= "select * from ona_application where idx = '{$_REQUEST[modify_idx]}'";
+		$result	= mysql_query($query);
+		$app	= mysql_fetch_array($result);
+		$mobile_split = split('-', $app[mobile]);
+		$email_split = split('@', $app[email]);
+	}
+
+	$mbId = $_SESSION['member_id'];
+	$row = sqlRow("SELECT mbId, mbName, mbGroup FROM ona_member WHERE mbId='".$mbId."'");
+	if($_SESSION['masterSession']=="master"){
+		$mblist = sqlArray("SELECT mbId, mbName, mbGroup FROM ona_member order by mbName");
+	}
+?>
+<script language="javascript" src="/include/js/calendar.js"></script>
+<script language="javascript" src="/include/js/jquery-1.4.2.min.js"></script>
+
+<script language="javascript">
+<!--
+function chgMember(obj){
+	var tmp = obj.value.split("/");
+	obj.form.mbId.value = tmp[0];
+	obj.form.parentName.value = tmp[1];
+	obj.form.class1.value = tmp[2];
+}
+	function getChecked(f){
+
+		var values = "";
+		len = f.elements["chkHomeType"].length;
+		
+		if(len){
+			for (var i=0; i< len; i++) {
+				if(f.chkHomeType[i].checked)
+					if(values == "")
+						values += f.chkHomeType[i].value;
+					else
+						values += ","+f.chkHomeType[i].value;
+			}	
+		}else{
+			values = f.chkHomeType.value;
+		}
+		
+		return values;
+
+	}
+
+	function getChecked2(f){
+
+		var values = "";
+		len = f.elements["chkWaitType"].length;
+		
+		if(len){
+			for (var i=0; i< len; i++) {
+				if(f.chkWaitType[i].checked)
+					if(values == "")
+						values += f.chkWaitType[i].value;
+					else
+						values += ","+f.chkWaitType[i].value;
+			}	
+		}else{
+			values = f.chkWaitType.value;
+		}
+		
+		return values;
+
+	}
+	
+
+	function input_check(f)
+	{
+		try{
+			if(!f.mbId.value){
+				alert('입소신청은 회원만 신청 할 수 있습니다.');
+				location.href('/html/sub/index.php?pno=070101');
+				return false;
+			}
+			if(!f.childName.value)
+			{
+				alert('자녀명을 입력하십시오!');
+				f.childName.focus();
+				return false;
+			}
+
+			if(!f.childBirth.value && !f.mchildjumin.value)
+			{
+				alert('자녀 생년월일을 입력하십시오!');
+				f.childBirth.focus();
+				return false;
+			}
+			if(f.class3[0].checked==false && f.class3[1].checked==false && f.class3[2].checked==false && f.class3[3].checked==false && f.class3[4].checked==false)
+			{
+				alert('입소대상을 선택하십시오!');
+				return false;
+			}
+			if(!f.class1.value)
+			{
+				alert('소속부처1을 입력하십시오!');
+				f.class1.focus();
+				return false;
+			}
+			if(f.class2[0].checked==false && f.class2[1].checked==false && f.class2[2].checked==false && f.class2[3].checked==false && f.class2[4].checked==false && f.class2[5].checked==false)
+			{
+				alert('소속부처2을 선택하십시오!');
+				return false;
+			}
+			if(!f.telephone.value)
+			{
+				alert('구내번호를 입력하십시오!');
+				f.telephone.focus();
+				return false;
+			}
+			if(!f.mobile1.value)
+			{
+				alert('핸드폰 번호를 입력하십시오!');
+				f.mobile1.focus();
+				return false;
+			}
+			if(!f.mobile2.value)
+			{
+				alert('핸드폰 번호를 입력하십시오!');
+				f.mobile2.focus();
+				return false;
+			}
+			if(!f.mobile3.value)
+			{
+				alert('핸드폰 번호를 입력하십시오!');
+				f.mobile3.focus();
+				return false;
+			}
+			if(!f.email1.value)
+			{
+				alert('이메일을 입력하십시오!');
+				f.email1.focus();
+				return false;
+			}
+			if(!f.email2.value)
+			{
+				alert('이메일을 입력하십시오!');
+				f.email2.focus();
+				return false;
+			}
+
+			f.homeType.value = getChecked(f);
+			f.waitType.value = getChecked2(f);
+
+		}catch(e){
+			alert(e.message);
+			return false;
+		}
+		return;
+	}
+//-->
+</script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td style="padding-bottom:26px;"> </td>
+	</tr>
+	<tr>
+		<td align="center"> </td>
+	</tr>
+	<tr>
+		<td align="center">
+			<!---쓰기--->
+			<table border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td style="padding-bottom:26px;"> </td>
+				</tr>
+				<tr>
+					<td><img src="../../images/sub06/img_01.gif" width="656" height="63"></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="tit_lv1"><img src="../../images/sub06/text_06.gif"></td>
+				</tr>
+				<tr>
+					<td>
+						<!---정보입력--->
+						<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableA">
+
+						<form name="frm" method="post" action="/html/sub06/060201_proc.php" onsubmit="return input_check(this);" target="iframe">
+							<input type="hidden" name="ret_host" value="<?=$_SERVER['HTTP_HOST']?>">
+							<input type="hidden" name="mbId" value="<?=$row[mbId]?>">
+							<input type="hidden" name="modify_idx" value="<?=$_REQUEST[modify_idx]?>">
+							<input type="hidden" name="send" value="<? if($_REQUEST[modify_idx]) {echo 'modify';} else {echo 'write';} ?>">
+							<input type="hidden" name="homeType">
+							<input type="hidden" name="waitType">
+							<input type="hidden" name="childAge" value="<?=$childAge?>">
+							<input type="hidden" name="page" value="<?=$page?>">
+							<input type="hidden" name="mchildjumin" value="<?=substr($app[childJumin],0,6)?>">
+<?if($_SESSION['masterSession']=="master"){?>
+							<tr>
+								<td width="133" class="input_tit">회원선택</td>
+								<td width="523" class="input_item">
+									<select name="mblist" onchange="chgMember(this)">
+									<option value="">회원선택
+	<?if($mblist) foreach($mblist as $mbv){?>
+									<option value="<?=$mbv['mbId']." / ".$mbv['mbName']." / ".$mbv['mbGroup']?>"><?=$mbv['mbName']." / ".$mbv['mbId']." / ".$mbv['mbGroup']?>
+	<?}?>
+									</select>
+								</td>
+							</tr>
+<?}?>
+							<tr>
+								<td class="input_tit">입소희망년</td>
+								<td class="input_item">
+									<input type="checkbox" name="chkWaitType" value="14" <? if(!(strpos($app[waittype], '14') === false)) echo 'checked'; ?>>
+									2014년 충원시
+									<input type="checkbox" name="chkWaitType" value="15" <? if(!(strpos($app[waittype], '15') === false)) echo 'checked'; ?>>
+									2015년 신입학
+									<span class="text11_or">(중복 체크 가능하나, 신중하게 표기해주세요.) </span>
+								</td>
+							</tr>
+							<tr>
+								<td width="143" class="input_tit">자녀명</td>
+								<td width="513" class="input_item">
+									<input name="childName" type="text" class="input" id="textfield2" style="width:150px" value="<?=$app[childName]?>"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="input_tit">생년월일</td>
+								<td class="input_item">
+									<input name="childBirth" type="text" class="input" style="width:80px;text-align:center;" onfocus='calendar(event,this)' onChange="autoDate();" value="<?=$app[childBirth]?>"/>
+									<span class="text11_or">(예 : <?=date("Y-m-d")?>) </span></td>
+							</tr>
+							<?
+							   $temp_sex1 = '';
+							   $temp_sex2 = '';
+							   $temp_sex3 = '';
+								if($app[sex] == '1')
+								{
+									$temp_sex1 = "checked";
+								}
+								else if($app[sex] == '2')
+								{
+									$temp_sex2 = "checked";
+								}
+								else
+								{
+									$temp_sex3 = "checked";
+								}
+							?>
+							<tr>
+								<td class="input_tit">성별</td>
+								<td class="input_item">
+									<input name="sex" type="radio" value="1" <?=$temp_sex1?>>
+									남
+									<input name="sex" type="radio" value="2" <?=$temp_sex2?>>
+									여
+								</td>
+							</tr>
+							<tr>
+								<td class="input_tit">부모명</td>
+								<td class="input_item">
+								<? if($row[mbId] == 'admin') { ?>
+									<input name="parentName" type="text" value="<?=$app[parentName]?>" class="input" id="textfield3" style="width:150px;">
+								<? } else { ?>
+									<input name="parentName" type="text" value="<? if($app[parentName]) {echo $app[parentName];} else {echo $row[mbName];}?>" class="input" id="textfield3" style="width:150px;border:0px" readonly/>
+								<? } ?>
+								</td>
+							</tr>
+							<tr>
+								<td class="input_tit">입소대상</td>
+								<td class="input_item">
+									<input name="class3" type="radio" value="1" <? if($app[class3] == '1') echo 'checked'; ?>>
+									국회 공무원
+									<input name="class3" type="radio" value="3" <? if($app[class3] == '3') echo 'checked'; ?>>
+									무기계약 근로자 및 직영후생시설 종사자<br>
+									<input name="class3" type="radio" value="5" <? if($app[class3] == '5') echo 'checked'; ?>>
+									의원실 인턴, 국회내 기간제 근로자, 국회내 상주 정당관계자 및 6개월 이상 상시출입기자<br>
+									<input name="class3" type="radio" value="7" <? if($app[class3] == '7') echo 'checked'; ?>>
+									국회내 상주업체 종사자
+									<input name="class3" type="radio" value="9" <? if($app[class3] == '9') echo 'checked'; ?>>
+									국회 보조금 지원받는 법인, 단체 종사자
+								</td>
+							</tr>
+							<tr>
+								<td class="input_tit">소속부처1 </td>
+								<td class="input_item">
+									<input name="class1" type="text" value="<? if($app[class1]) {echo $app[class1];} else {echo $row[mbGroup];}?>" class="input" id="textfield32" style="width:150px" />
+								</td>
+							</tr>
+							<tr>
+								<td class="input_tit">소속부처2</td>
+								<td class="input_item">
+									<input name="class2" type="radio" value="사무처" <? if($app[class2] == '사무처') echo 'checked'; ?> >
+									사무처
+									<input name="class2" type="radio" value="의원회관" <? if($app[class2] == '의원회관') echo 'checked'; ?> >
+									의원회관
+									<input name="class2" type="radio" value="도서관" <? if($app[class2] == '도서관') echo 'checked'; ?> >
+									도서관
+									<input name="class2" type="radio" value="예산처" <? if($app[class2] == '예산처') echo 'checked'; ?> >
+									예산처
+									<input name="class2" type="radio" value="기타" <? if($app[class2] == '기타') echo 'checked'; ?> >
+									기타 
+								</td>
+							</tr>
+							<tr>
+								<td class="input_tit">직급</td>
+								<td class="input_item">
+									<input name="position1" type="text" class="input" id="textfield35" style="width:150px" value="<?=$app[position1]?>"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="input_tit">직위</td>
+								<td class="input_item">
+									<input name="position2" type="text" class="input" id="textfield35" style="width:150px" value="<?=$app[position2]?>"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="input_tit">가정분류</td>
+								<td class="input_item">
+									<input type="checkbox" name="chkHomeType" value="a" onclick='jcheck();' <? if(!(strpos($app[homeType], 'a') === false)) echo 'checked'; ?>>
+									한부모
+									<input type="checkbox" name="chkHomeType" value="b" <? if(!(strpos($app[homeType], 'b') === false)) echo 'checked'; ?>>
+									저소득
+									<input type="checkbox" name="chkHomeType" value="c" <? if(!(strpos($app[homeType], 'c') === false)) echo 'checked'; ?>>
+									부모장애
+									<input type="checkbox" name="chkHomeType" value="d" <? if(!(strpos($app[homeType], 'd') === false)) echo 'checked'; ?>>
+									자녀의 형제장애
+									<input type="checkbox" name="chkHomeType" value="e" <? if(!(strpos($app[homeType], 'e') === false)) echo 'checked'; ?>>
+									다문화 가정<br>
+									<input type="checkbox" name="chkHomeType" value="f" <? if(!(strpos($app[homeType], 'f') === false)) echo 'checked'; ?>>
+									조손가정
+									<input type="checkbox" name="chkHomeType" value="g" <? if(!(strpos($app[homeType], 'g') === false)) echo 'checked'; ?>>
+									맞벌이
+									<input type="checkbox" name="chkHomeType" value="h" <? if(!(strpos($app[homeType], 'h') === false)) echo 'checked'; ?>>
+									두자녀,세자녀
+									<input type="checkbox" name="chkHomeType" value="i" <? if(!(strpos($app[homeType], 'i') === false)) echo 'checked'; ?>>
+									기타저소득(3,4층)
+									<input type="checkbox" name="chkHomeType" value="j" <? if(!(strpos($app[homeType], 'j') === false)) echo 'checked'; ?>>
+									입양유아<br>
+									<input type="checkbox" name="chkHomeType" value="k" <? if(!(strpos($app[homeType], 'k') === false)) echo 'checked'; ?>>
+									재원형제
+									<input type="checkbox" name="chkHomeType" value="l" <? if(!(strpos($app[homeType], 'l') === false)) echo 'checked'; ?>>
+									해당없음
+									<span class="text11_or">(해당되는 내용을 모두 체크해 주세요.) </span>
+								</td>
+							</tr>
+<? if($_SESSION['masterSession']) { ?>
+							<tr>
+								<td class="input_tit">대기날짜</td>
+								<td class="input_item">
+
+								<? 
+								if($row[mbId] == 'admin' && $app[regdate]) 
+								{ 
+									$app_year = date('Y');
+									$app_month = date('n');
+									$app_day = date('j');
+									$app_hour = date('G');
+									$app_minute = date('i');
+									$app_second = date('s');
+									if($app[regdate])
+									{
+										$app_year = date('Y', $app[regdate]);
+										$app_month = date('n', $app[regdate]);
+										$app_day = date('j', $app[regdate]);
+										$app_hour = date('G', $app[regdate]);
+										$app_minute = date('i', $app[regdate]);
+										$app_second = date('s', $app[regdate]);
+									}
+								?>
+									<select name='regdate_year'>
+										<?for($tmpYear=date("Y");$tmpYear>=2009;$tmpYear--){?>
+										<option value='<?=$tmpYear?>' <?=$app_year==$tmpYear?"selected":""?>><?=$tmpYear?></option>
+										<?}?>
+									</select>년
+									<select name='regdate_month'>
+									<? for($i = 1; $i <= 12; $i++) { ?>
+										<option value='<?=$i?>' <? if($app_month == $i) {echo 'selected';}?> ><?=$i?></option>
+									<? } ?>
+									</select>월
+									<select name='regdate_day'>
+									<? for($i = 1; $i <= 31; $i++) { ?>
+										<option value='<?=$i?>' <? if($app_day == $i) {echo 'selected';}?> ><?=$i?></option>
+									<? } ?>
+									</select>일
+									<select name='regdate_hour'>
+									<? for($i = 0; $i <= 23; $i++) { ?>
+										<option value='<?=$i?>' <? if($app_hour == $i) {echo 'selected';}?> ><?=$i?></option>
+									<? } ?>
+									</select>시
+									<select name='regdate_minute'>
+									<? for($i = 0; $i <= 59; $i++) { ?>
+										<option value='<?=$i?>' <? if($app_minute == $i) {echo 'selected';}?> ><?=$i?></option>
+									<? } ?>
+									</select>분
+									<select name='regdate_second'>
+									<? for($i = 0; $i <= 59; $i++) { ?>
+										<option value='<?=$i?>' <? if($app_second == $i) {echo 'selected';}?> ><?=$i?></option>
+									<? } ?>
+									</select>초
+
+								<? } else { 
+											if($app[regdate])
+											{
+												echo date("Y-m-d", $app[regdate]);
+											}
+											else
+											{
+												echo date("Y-m-d");
+											}
+									} 
+								?>
+								</td>
+							</tr>
+<? } ?>
+							<tr>
+								<td class="input_tit">구내번호</td>
+								<td class="input_item">
+									<input name="telephone" type="text" class="input" id="textfield35" style="width:150px" value="<?=$app[telephone]?>"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="input_tit">핸드폰 번호 </td>
+								<td class="input_item">
+									<? $arrMobile = array('010','011','016','017','018','019');?>
+									<select name="mobile1">
+										<?
+											echo "<option value=''>선택</option>";
+											foreach($arrMobile As $val)
+											{?>
+											<option value='<?=$val?>' <? if($mobile_split[0] == $val) echo 'selected';?> ><?=$val?></option>
+											<?
+											}
+										?>
+									</select>									
+									-
+									<input name="mobile2" type="text" class="input" id="textfield3522" style="width:50px" value="<?=$mobile_split[1]?>"/>
+									-
+									<input name="mobile3" type="text" class="input" id="textfield3523" style="width:50px" value="<?=$mobile_split[2]?>"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="input_tit">이메일</td>
+								<td class="input_item">
+									<input name="email1" type="text" class="input" style="width:100;IME-MODE:disabled;"  value="<? if($email_split[0]) {echo $email_split[0];} else {echo $exEmail[0];}?>"/>
+									@
+									<input name="email2" type="text" class="input" style="width:100;IME-MODE:disabled;"  value="<?if($email_split[1]) {echo $email_split[1];} else {echo $exEmail[1];}?>"/>
+									<select class="list" onChange="if(this.value=='NONE'){this.form.email2.select();this.form.email2.focus();}else{this.form.email2.value=this.value;}">
+										<option selected="selected" value="">선택하세요</option>
+										<option value="naver.com">naver.com</option>
+										<option value="nate.com">nate.com</option>
+										<option value="lycos.co.kr">lycos.co.kr</option>
+										<option value="yahoo.co.kr">yahoo.co.kr</option>
+										<option value="netian.com">netian.com</option>
+										<option value="empal.com">empal.com</option>
+										<option value="hanmir.com">hanmir.com </option>
+										<option value="paran.com">paran.com</option>
+										<option value="hanmail.net">hanmail.net</option>
+										<option value=NONE>직접입력</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="input_tit" style="border-bottom:none;">재원중인 형제아의<br>
+									이름/생년월일 </td>
+								<td class="input_item" style="border-bottom:none;">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td style="padding:0px 0px 5px 0px">- 이름
+												<input name="recordName" value="<?=$app[recordName]?>" type="text" class="input" id="textfield42" style="width:100px;" />
+												- 생년월일
+												<input name="recordBirth" value="<?=$app[recordBirth]?>" type="text" class="input" id="textfield322" style="width:150px" />
+												<span class="text11_or">(예 : <?=date("Y-m-d")?>) </span> </td>
+										</tr>
+										<tr>
+											<td>
+												<span class="input_item" style="border-bottom:none;"><span class="text11_or">※ 재원 중인 형제아가 있을경우에만 작성</span></span>
+											</td>
+										</tr>
+									</table>									
+								</td>
+							</tr>
+						</table>
+						<div class=text11_or style='color:#555555;margin-top:5px;'>&nbsp;* 입학 신청 후 소속부처 및 전화번호 변동이 있을시, 반드시 재기록해주시기 바랍니다.</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="button">
+						<input type="image" src="../../images/sub06/btn_ok.gif" align="absmiddle" alt="확인" hspace="5" border="0" />
+						<img src="../../images/member/btn_cancel.gif" align="absmiddle" alt="취소" hspace="5" onClick="history.back();" style="cursor:pointer" />
+					</td>
+				</tr>
+				</form>
+			</table>
+			<!---쓰기(e)--->
+		</td>
+	</tr>
+</table>

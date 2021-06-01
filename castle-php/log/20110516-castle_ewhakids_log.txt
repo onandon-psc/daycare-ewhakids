@@ -1,0 +1,4 @@
+112.218.172.42 - [16/May/2011:11:50:14 +0900] /onMaster/insteadofmysqlconsole.php: finalsql = create table admin_login_history (\r\nidx int primary key auto_i: SQL_Injection 공격 패턴 탐지
+ -&gt; [Method: POST]
+ -&gt; [Policy: 기본정책]
+ -&gt; [Pattern: create[[:space:]]+table]
